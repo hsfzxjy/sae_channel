@@ -27,7 +27,7 @@ decodeJSON = JSON.parse||function(json){eval('('+json+')')};
 
 window.chat = {
 	'User': ChatUser,
-	'Discussion': ChatDiscussion,
+	'Discussion': ChatDiscussion
 };
 
 channelClient.bind('onmessage', function (data) {

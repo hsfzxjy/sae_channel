@@ -50,7 +50,10 @@ class Channel(object):
 	def get_channel_url(self):
 		if self.__channel_url:
 			return self.__channel_url
-		import memcache
+		try:
+			import memcache
+		except:
+			import pylibmc as memcache
 		mc = memcache.Client()
 		c = self.__channel_name
 		url = mc.get(self.__channel_name)
