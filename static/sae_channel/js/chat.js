@@ -32,7 +32,7 @@ window.chat = {
 
 channelClient.bind('onmessage', function (data) {
 	var obj = decodeJSON(data);
-	if (typeof obj != 'object'||obj['attr']!=2||obj['attr']!=2) return;
+	if (typeof obj != 'object'||obj['attr']!=2&&obj['attr']!=3) return;
 	switch (obj['attr']) {
 		case 2: !window.chat.onchatmessage||window.chat.onchatmessage(ChatUser(obj['from']), message);
 				break;
